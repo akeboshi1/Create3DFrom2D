@@ -169,12 +169,12 @@
 		return Triangle;
 	}());
 
-	// var triangle=new Triangle(new Vector(0,0,5), new Vector(0,0,0), new Vector(10,0,0))
-	// var result= triangle.intersect({
-	// 	start:new Vector(1,1,1),
-	// 	dir:new Vector(1,0,1),
-	// })
-	// console.log(result)
+	var triangle=new Triangle(new Vector(0,0,5), new Vector(0,0,0), new Vector(10,0,0))
+	var result= triangle.intersect({
+		start:new Vector(1,-1,1),
+		dir:new Vector(0,1,0),
+	})
+	console.log(result)
 
 	// var triangle=new Triangle(new Vector(0,0,0), new Vector(2,0,4), new Vector(9,0,0))
 	// var result= triangle.intersect({
@@ -190,14 +190,13 @@
 	// })
 	// console.log(result)
 
-	var triangle=new Triangle(new Vector(0,0,0), new Vector(2,0,4), new Vector(9,0,0))
+	/*var triangle=new Triangle(new Vector(0,0,0), new Vector(2,0,4), new Vector(9,0,0))
 	var ray={
 		start:new Vector(0,10,-20),
 		dir:new Vector(0.07603525365629483,-0.38466057993643654,0.9194054901948931),
 	}
 	var result= triangle.intersect(ray)
-	draw(triangle, ray)
-	console.log(result)
+	console.log(result)*/
 
 
 	function draw(triangle, ray){
