@@ -10,35 +10,35 @@
 
 
 <script type="text/javascript">
-	var gv={};
-	gv.radian_to_degree=function(radian){
+	var vs={};
+	vs.radian_to_degree=function(radian){
 		var degree=radian*180/Math.PI;
 		return degree;
 	}
-	gv.degree_to_radian=function(degree){
+	vs.degree_to_radian=function(degree){
 		var radian=Math.PI*degree/180;
 		return radian;
 	}
-	gv.get_distance=function(a,b){
+	vs.get_distance=function(a,b){
 		b=b||{x:0,y:0};
 		return Math.sqrt(
 				Math.pow((a.x-b.x),2)
 				+Math.pow((a.y-b.y),2)
 			)
 	}
-	gv.sin=function(radian){
+	vs.sin=function(radian){
 		var r=Math.sin(radian);
 		return r;
 	}
-	gv.cos=function(radian){
+	vs.cos=function(radian){
 		var r=Math.cos(radian);
 		return r;
 	}
-	gv.tan=function(radian){
+	vs.tan=function(radian){
 		var r=Math.tan(radian);
 		return r;
 	}
-	gv.point_in_polygon=function(point, vs) {
+	vs.point_in_polygon=function(point, vs) {
 	    // ray-casting algorithm based on
 	    // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
 	    
@@ -56,7 +56,7 @@
 	    
 	    return inside;
 	}
-	gv.dataURItoBlob=function(dataURI) {
+	vs.dataURItoBlob=function(dataURI) {
 	  // convert base64/URLEncoded data component to raw binary data held in a string
 	  var byteString;
 	  if (dataURI.split(',')[0].indexOf('base64') >= 0)
@@ -75,7 +75,7 @@
 
 	  return new Blob([ia], {type:mimeString});
 	}
-	gv.getQueryStringByName=function(name) {
+	vs.getQueryStringByName=function(name) {
 	    var result = location.search.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
 	    if (result == null || result.length < 1) {
 	        return "";
@@ -645,7 +645,7 @@
 	document.onmousemove=function(e){
 		mouse_y=e.pageX/100;
 		mouse_x=e.pageY/100;
-		// console.log(gv.radian_to_degree(mouse_y),gv.radian_to_degree(mouse_x));
+		// console.log(vs.radian_to_degree(mouse_y),vs.radian_to_degree(mouse_x));
 		draw({
 			things: [
 
@@ -718,7 +718,7 @@
 	document.onmousemove2=function(e){
 		mouse_y=e.pageX/100;
 		mouse_x=e.pageY/100;
-		// console.log(gv.radian_to_degree(mouse_y),gv.radian_to_degree(mouse_x));
+		// console.log(vs.radian_to_degree(mouse_y),vs.radian_to_degree(mouse_x));
 		draw({
 			things: [
 
