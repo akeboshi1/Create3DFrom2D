@@ -219,7 +219,7 @@
 
 
 
-		var shape = new THREE.Shape();
+		/*var shape = new THREE.Shape();
 		shape.moveTo( triangle.vert0.x, triangle.vert0.z );
 		shape.lineTo( triangle.vert1.x, triangle.vert1.z );
 		shape.lineTo( triangle.vert2.x, triangle.vert2.z );
@@ -235,7 +235,25 @@
 		var material = new THREE.MeshLambertMaterial( { color: 'red', wireframe: false } );
 		var mesh = new THREE.Mesh( geometry, material );
 		mesh.rotateX(Math.PI/2)
-		scene.add(mesh);
+		scene.add(mesh);*/
+
+		var geo_triangle=new THREE.Geometry()
+		geo_triangle.vertices.push(
+			new THREE.Vector3( triangle.vert0.x, triangle.vert0.y, triangle.vert0.z  ),
+			new THREE.Vector3( triangle.vert1.x, triangle.vert1.y, triangle.vert1.z ),
+			new THREE.Vector3( triangle.vert2.x, triangle.vert2.y, triangle.vert2.z )
+		);
+		geo_triangle.faces.push( new THREE.Face3( 0, 1, 2 ) );
+		geo_triangle.computeBoundingSphere();
+		var mtl_triangle = new THREE.MeshLambertMaterial( { color: 'red', wireframe: false } );
+		var mesh_triangle = new THREE.Mesh( geo_triangle, mtl_triangle );
+		scene.add(mesh_triangle)
+
+		var geo_ray=new THREE.Geometry()
+		geo_ray.vertices.push(
+			new THREE.Vector3( ray.start.x, ray.start.y, ray.start.z  ),
+			new THREE.Vector3( triangle.vert1.x, triangle.vert1.y, triangle.vert1.z )
+		)
 
 
 		// helper
