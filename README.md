@@ -1,4 +1,4 @@
-#create3Dfrom2D
+# create3Dfrom2D
 
 ### 原理解释 : https://my.oschina.net/gonnavis/blog/912116 
 ### 在线演示 :   http://gonnavis.com/3d_raytracer 
